@@ -1,0 +1,139 @@
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Whole Doc */
+body{
+    background: beige;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/* Main Container */
+.container{
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    background: rgb(102, 241, 126);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 170px;
+}
+
+/* Calculator */
+.calculator{
+    width: 20%;
+    min-width: 400px;
+    position: absolute;
+    background: aquamarine;
+    border-radius: 30px;
+}
+
+/* Heading */
+.heading{
+    position: relative;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.heading h2{
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+.heading::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #000;
+}
+
+/* Body */
+.body{
+    text-align: center;
+}
+
+/* Bil Input */
+.bill h3{
+    text-align: left;
+    margin: 0 0 10px 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.bill-input{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bill-input input{
+    width: 250px;
+    height: 30px;
+    margin-left: 30px;
+    padding-left: 10px;
+}
+
+/* Option */
+.option{
+    margin-top: 25px;
+}
+
+.option .rd{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 15px 0 0 70px;
+}
+
+.rd div{
+    line-height: 40px;
+}
+
+/* Cost */
+.cost{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.cost p{
+    text-transform: uppercase;
+}
+
+.cost input{
+    width: 200px;
+    height: 30px;
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+/* Calculate */
+.calculate{
+    margin: 30px 0;
+}
+
+.calculate button{
+    width: 150px;
+    height: 40px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    border: 5px rgb(58, 57, 57, 0.5) solid;
+    background: #8074e9;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.calculate button:hover{
+    background: #fff;
+}

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Beginner</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- External JS -->
+    <script src="./script.js"></script>
+</head>
+<body onload="greetings()" id="bd">
+    <div class="header">
+        <h1 id="hd">Learning Javascript</h1>
+        <p>With Wahsandaruwan</p>
+    </div>
+
+    <div class="container">
+        <!-- For Events -->
+        <!-- For Button Content Change -->
+        <!-- Inline -->
+        <button onclick="this.innerHTML = 'You Clicked'">Click ME</button>
+        <!-- By calling a function -->
+        <button onclick="doClick(this)">Click ME</button>
+
+        <!-- For Change Heading -->
+        <button onclick="changeHeading()">Change Heading</button>
+
+        <!-- For Show Date -->
+        <button onclick="showDate()">Show Date</button>
+
+        <!-- Show date onmouseover -->
+        <button onmouseout="clearDate()" onmouseover="showDate()">On Mouse Over Show Date</button>
+
+    </div>
+
+    <div>
+        <h1 id="welcome"></h1>
+        <p id="date"></p>
+    </div>
+
+    <!-- For Validation and Cahange Element Colors -->
+    <div class="form">
+        <form action="some.php" method="POST" name="myform" onsubmit="return validate()">
+            <div>
+                <label for="">
+                    First Name
+                </label>
+                <input type="text" name="firstName" id = "firstName">
+            </div>
+            <br>
+            <div>
+                <label for="">
+                    Last Name
+                </label>
+                <input type="text" name="lastName" id = "lastName">
+            </div>
+            <br>
+            <div>
+                <label for="">Background</label>
+                <!-- Change body BG -->
+                <select name="bg" id="bg" onchange="changeBg(this)">
+                    <option value="white">White</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                </select>
+            </div>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!-- Internal JS - First Session -->
+    <script>
+        // -----Data Types
+        // Number
+        // Strings
+        // Arrays
+        // Objects
+
+        // -----Creating Variables
+        // Variables can contain letters, numbers, underscores, dollar signs
+        // Allways begins with a letter
+        // Case Sensitive
+        // --Numbers
+        var number1 = 44;
+        var number2 = 40;
+        alert(number1+number2);
+        alert(number1-number2);
+        alert(number1*number2);
+        alert(number1/number2);
+        alert(number1%number2);
+
+        // --Strings
+        var str1 = '44';
+        var str2 = '40';
+        alert(str1+str2);
+
+        // --Concatenation
+        alert("My age is : " + number1 + " Years");
+
+        // -----Case Sensitivity
+        var animal = "Lion";
+        var AnimaL = "Cat";
+        alert(animal);
+        alert(AnimaL);
+
+        // -----Styles for creating variables
+        // --Camel Case
+        var monthlySalaryIncrement;
+
+        // --Partial Case
+        var MonthlySalaryIncrement;
+
+        // --Underscore
+        monthly_salary_increment;
+
+        // ----------------------------------------
+
+        // -----Arrays
+        // Creating an array is a creating an object of Array Class
+        // So, it has properties and method
+        // --Initializing Arrays
+        var food = ["rice","bread","apple","milk"];
+        alert(food[2]);
+
+        var colors = new Array('red','green','yellow','purple');
+        alert(colors[1]);
+
+        // --Append values
+        colors.push("brown");
+        alert(colors[4]);
+
+        colors.push("blue","pink");
+        alert(colors[6]);
+
+        // --Arithmetic Operations with Arrays
+        var num = [23,4,66,78,"ten",7,88];
+        var result = num[2] + num[3];
+        alert(result);
+
+        var result = num[2] + num[4];
+        alert(result);
+
+        var num1 = [23,4,66,78,7,88];
+        // --Length of an Array
+        alert(num1.length);
+
+        // --Sorting | Sort
+        alert(num1.sort());
+        // Compare Function
+        // Negative : a is first  | Positive : b is first | 0 : Nothing/Same
+        alert(num1.sort(function(a, b) {return a - b}));
+
+        // --Reverse
+        alert(num.reverse());
+
+        // -------------------------------------------------
+
+        // -----Loops
+        // Iterating elemnts
+
+        // --For
+        for(var i = 0; i < 10; i++){
+            console.log(i);
+        }
+
+        // -With concatenation
+        for(var i = 0; i < 10; i++){
+            console.log("This is my favourite number : " + i);
+        }
+
+        // -Iterate an Array
+        var arr = [23,11,4,45,66,33,"twenty",33,22,23];
+        for(var i = 0; i < arr.length; i++){
+            console.log(arr[i]);
+        }
+
+        // --While
+        var j = 0;
+        while(j < 20){
+            console.log(j);
+            j++;
+        }
+
+        // For Each
+        var k = [12,3,455,663,22];
+        k.forEach(function(item){
+            console.log(item);
+        })
+
+        // -------------------------------------------------
+
+        // -----Conditionals
+        // --If Else
+        if(1 == 2){
+            console.log("This is false!")
+        }
+        else{
+            console.log("This is true!")
+        }
+
+        // With Variables
+        var v1 = 5;
+        var v2 = 6;
+        if(v1 == v2){
+            console.log("This is false");
+        }
+        else if(v1 <= v2){
+            console.log("This is true");
+        }
+        else{
+            console.log("I don't know!")
+        }
+
+        // With Logical Operators
+        if(v1 <= v2 && v1 == 5){
+            console.log("This is true");
+        }
+        else if(v1 == 5 || v2 <= v1){
+            console.log("This is false");
+        }
+        else{
+            console.log("I don't know!");
+        }
+
+        // Multiple IF
+        if(v1 <= v2 && v1 == 5){
+            console.log("This is true");
+        }
+        if(v1 == 6 || v2 >= v1){
+            console.log("This is also true");
+        }
+
+        // --Switch Case
+        var grade = "A";
+        switch(grade){
+            case "B":
+                alert("Good");
+                break;
+            case "C":
+                alert("OK");
+                break;
+            case "A":
+                alert("Superb");
+                break;
+            default:
+                alert("Wrong Input");
+                break;
+        }
+
+        // ------------------------------------------
+
+        // -----Object Literals
+        var person = {
+            fname : "Himal",
+            lname : "Sandaruwan",
+            age : 25,
+            phone : [23241424,412421525],
+            address : {
+                no : 121,
+                street : "55 nevil st",
+                city : "panadura"
+            },
+            fullname: function(){
+                return this.fname + " " + this.lname;
+            }
+        }
+
+        console.log(person);
+        console.log(person.fname);
+        console.log(person.phone[1])
+        console.log(person.address);
+        console.log(person.address.street);
+        console.log(person.fullname());
+
+        // -------------------------------------------------
+
+        // -----Object Constructor
+        var cat = new Object();
+        cat.color = "ash";
+        cat.sound = "meow";
+
+        cat.describe = function(){
+            return "Cat says " + this.sound + " and his color is " + this.color;
+        }
+
+        console.log(cat.color);
+        console.log(cat.describe());
+
+        // ---------------------------------------------------
+
+        //-----Constructor Patterns
+        function fruit(name, color){
+            this.name = name;
+            this.color = color;
+
+            this.describe = function(){
+                return "A " + this.name + " is " + this.color + " color fruit";
+            }
+        }
+
+        var mango = new fruit("Mango","Yellow");
+        console.log(mango.name);
+        console.log(mango.describe());
+
+        // ---------------------------------------------------
+
+        // -----Object Arrays
+        var users = [
+            {
+                name : "Kasun",
+                age : 24
+            },
+            {
+                name : "Himal",
+                age : 30
+            },
+            {
+                name : "Damith",
+                age : 40
+            }
+        ]
+
+        console.log(users[0]);
+        console.log(users[2].age);
+
+        // ----------------------------------------
+
+
+    </script>
+</body>
+</html>

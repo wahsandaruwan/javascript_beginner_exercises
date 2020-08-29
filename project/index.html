@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Calculator -->
+        <div class="calculator">
+            <!-- Heading -->
+            <div class="heading">
+                <h2>Tip Calculator</h2>
+            </div>
+            <!-- Body -->
+            <div class="body">
+                <div class="bill">
+                    <h3>Bill Amount</h3>
+                    <div class="bill-input">
+                        <p>LKR</p>
+                        <input type="text" id="billinput">
+                    </div>
+                </div>
+                <div class="option">
+                    <p>How satidfied are you with our service?</p>
+                    <div class="rd">
+                        <div>
+                            <input type="radio" id="r25" name="tl" value="25">
+                            <label for="r25">25%</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="r15" name="tl" value="15">
+                            <label for="r25">15%</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="r10" name="tl" value="10">
+                            <label for="r25">10%</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="cost">
+                    <p>Total Cost</p>
+                    <input type="text" id="total">
+                </div>
+                <div class="calculate">
+                    <button onclick="calculate()" id="calc">Calculate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
