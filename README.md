@@ -22,4 +22,6 @@
 * Events with functions
 * Tip Calculator Project
 
+### License : MIT
+
 ### You are welcome to upadte this source code if contains any miss matches.
